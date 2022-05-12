@@ -1,0 +1,114 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "react", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "import/no-unresolved": 0,
+    "react/jsx-filename-extension": [1, {
+      "extensions": [
+        ".ts",
+        ".tsx",
+        ".otf"
+      ]
+    }],
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "arrowParens": "avoid",
+        "endOfLine": "auto"
+      }
+    ],
+    "no-use-before-define": "off",
+    "import/extensions": ["error", {
+      "ts": "never",
+      "tsx": "never",
+      "js": "never",
+      "jsx": "never",
+      "otf": "always",
+      "enum": "always",
+      "routes": "always"
+    }],
+    "react/prop-types": 0,
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "react/style-prop-object": "off",
+    "import/prefer-default-export": "off",
+    "no-param-reassign": ["error", {
+      "props": false
+    }],
+    "react/jsx-props-no-spreading": "off",
+    "import/order": ["error", {
+      "groups": [
+        "builtin",
+        "external",
+        "internal",
+        "index",
+        "sibling",
+        "parent",
+        "object",
+        "type"
+      ],
+      "pathGroups": [
+        {
+          "pattern": "@api/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@assets/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@components/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@hooks/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@redux/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@routes/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@screens/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@styles/**",
+          "group": "internal"
+        },
+        {
+          "pattern": "@utils/**",
+          "group": "internal"
+        }
+      ],
+      "pathGroupsExcludedImportTypes": ["builtin", "type"],
+      "newlines-between": "always",
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      }
+    }]
+  }
+}
