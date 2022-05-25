@@ -8,7 +8,7 @@ export function Login() {
   const [password, setPassword] = useState('');
   return (
     <Container>
-      <Title style={{ textAlign: 'center' }}>Login</Title>
+      <Title style={{ textAlign: 'center', paddingTop: 80 }}>Login</Title>
 
       <TextInput
         style={{
