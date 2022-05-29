@@ -1,42 +1,52 @@
+import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import * as React from 'react';
 import { Text, View } from 'react-native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
+
 import { Header } from '@components/Header';
+import { CadProduct } from '@screens/CadProduct';
 
 function Feed() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Header/>
-      <Text>Feed!</Text>
-    </View>
+    <>
+      <Header />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Home!</Text>
+      </View>
+    </>
   );
 }
 
 function Profile() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Header/>
-      <Text>Profile!</Text>
-    </View>
+    <>
+      <Header />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Profile!</Text>
+      </View>
+    </>
   );
 }
 
-function Notifications() {
+function RegisterProduct() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Header/>
-      <Text>Notifications!</Text>
-    </View>
+    <>
+      <Header />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <CadProduct />
+      </View>
+    </>
   );
 }
 
 function Configuration() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Header/>
-      <Text>Configuration!</Text>
-    </View>
+    <>
+      <Header />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Configuration!</Text>
+      </View>
+    </>
   );
 }
 
@@ -45,27 +55,28 @@ const Tab = createMaterialBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Feed"
-      activeColor="#e91e63"
-      style={{ backgroundColor: 'tomato' }}
+      barStyle={{ backgroundColor: '#222831' }}
+      initialRouteName="Home"
+      activeColor="#f5f5f5"
+      inactiveColor="#709fb0"
     >
       <Tab.Screen
-        name="Feed"
+        name="Home"
         component={Feed}
         options={{
-          tabBarLabel: 'Home',
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <MaterialCommunityIcons name="home" color={color} size={20} />
           ),
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="Cadastrar"
+        component={RegisterProduct}
         options={{
-          tabBarLabel: 'Updates',
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
+            <MaterialCommunityIcons name="bell" color={color} size={20} />
           ),
         }}
       />
@@ -73,9 +84,9 @@ function MyTabs() {
         name="Profile"
         component={Profile}
         options={{
-          tabBarLabel: 'Profile',
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={26} />
+            <MaterialCommunityIcons name="account" color={color} size={20} />
           ),
         }}
       />
@@ -83,9 +94,9 @@ function MyTabs() {
         name="Configuration"
         component={Configuration}
         options={{
-          tabBarLabel: 'gear',
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="gear" color={color} size={26} />
+            <FontAwesome name="gear" color={color} size={20} />
           ),
         }}
       />
@@ -94,7 +105,5 @@ function MyTabs() {
 }
 
 export function Home() {
-  return (
-      <MyTabs />
-  );
+  return <MyTabs />;
 }

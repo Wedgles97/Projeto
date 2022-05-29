@@ -13,3 +13,7 @@ export const Title = styled(Text)`
   color: ${({ theme }) => theme.palette.common.white};
   margin-bottom: 20px;
 `;
+
+export const UserName = styled(Text)`
+  font-size: 18px;
+`;

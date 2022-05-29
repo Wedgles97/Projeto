@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { TextInput, Text, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { TextInput, Text, TouchableOpacity, StatusBar } from 'react-native';
 
 import { Container, Title } from './styles';
 
@@ -8,6 +8,7 @@ export function Login() {
   const [password, setPassword] = useState('');
   return (
     <Container>
+      <StatusBar hidden />
       <Title style={{ textAlign: 'center', paddingTop: 80 }}>Login</Title>
 
       <TextInput
@@ -56,7 +57,7 @@ export function Login() {
           padding: 10,
         }}
       >
-        <Text style={{ textAlign: 'center' }}>Send</Text>
+        <Text style={{ textAlign: 'center' }}>Logar</Text>
       </TouchableOpacity>
     </Container>
   );
