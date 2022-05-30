@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 // eslint-disable-next-line import/extensions
 import { authenticationApi } from '../../api/authentication/authentication.api';
+
 import type { RootState } from '../../redux/store';
 import type { User } from './types';
 

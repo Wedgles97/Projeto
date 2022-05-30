@@ -1,9 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
+
+// eslint-disable-next-line import/extensions
 import { authenticationApi } from '../api/authentication/authentication.api';
+// eslint-disable-next-line import/extensions
 import { pokemonApi } from '../api/pokemon/pokemon.api';
-import counterReducer from '../redux/counter/counter.slice';
+// eslint-disable-next-line import/extensions
 import authenticationReducer from '../redux/authentication/authentication.slice';
+// eslint-disable-next-line import/extensions
+import counterReducer from '../redux/counter/counter.slice';
 
 export const store = configureStore({
   reducer: {
@@ -12,11 +17,11 @@ export const store = configureStore({
     counter: counterReducer,
     authentication: authenticationReducer,
   },
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(pokemonApi.middleware),
 });
 
-setupListeners(store.dispatch)
+setupListeners(store.dispatch);
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

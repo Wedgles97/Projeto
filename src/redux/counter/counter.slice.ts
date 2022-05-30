@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { RootState, AppThunk } from '../store';
 
 export interface CounterState {
@@ -15,17 +16,18 @@ export const counterSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
-    increment: (state) => {
+    increment: state => {
       state.value += 1;
     },
-    decrement: (state) => {
+    decrement: state => {
       state.value -= 1;
     },
     incrementByAmount: (state, action: PayloadAction<number>) => {
       state.value += action.payload;
     },
   },
-  extraReducers: (builder) => {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  extraReducers: builder => {},
 });
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;

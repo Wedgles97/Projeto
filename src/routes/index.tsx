@@ -11,8 +11,8 @@ interface Props {
 }
 
 export function Routes(props: Props) {
-  const logged = useAppSelector(state => state.authentication.token);
-
+  // const logged = useAppSelector(state => state.authentication.token);
+  const logged = true;
   return (
     <NavigationContainer {...props}>
       {logged ? <PrivateRoutes /> : <PublicRoutes />}
